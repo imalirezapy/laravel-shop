@@ -5,7 +5,7 @@
 @section('auth-content')
 
         <div class="center-login me-auto " >
-            <img src="/defaults/brand-image.png" class="mb-1r"  width="48" height="48">
+            <img src="/storage/defaults/brand-image.png" class="mb-1r"  width="48" height="48">
 
             <h1 class="mb-1r login-to-bazar" >
                 ورود به بازار
@@ -28,7 +28,7 @@
 
             <label class="are-you-developer"><span>ثبت&zwnj;‌نام نکرده&zwnj;اید؟</span></label>
 
-            <a href="{{route('register')}}" class="btn btn-outline-dark register-link-botton" >ثبت&zwnj;نام</a>
+            <a href="{{route('register')}}" class="btn button-48-primary register-link-botton" ><span>ثبت&zwnj;نام</span></a>
         </div>
 
 
