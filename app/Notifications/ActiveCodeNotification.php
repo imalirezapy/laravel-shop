@@ -9,7 +9,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
 
-class ActiveCodeNotification extends Notification
+class ActiveCodeNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 
