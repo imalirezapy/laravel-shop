@@ -27,9 +27,14 @@ Route::middleware('guest')->group(function () {
     Route::post('/verify', [UserController::class, 'postPhoneVerify']);
 });
 
-Route::get('/', function () {
-    \auth()->logout();
+Route::middleware('auth')->group(function () {
+    Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+});
 
+Route::get('/', function () {
+    if (\auth()->check()) {
+        echo "<h1><a href='/logout'>خروج</a></h1>";
+    }
     return view('welcome');
 })->name('home');
 

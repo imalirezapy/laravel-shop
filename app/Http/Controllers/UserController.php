@@ -74,6 +74,12 @@ class UserController extends Controller
 
     }
 
+    public function logout()
+    {
+        \auth()->logout();
+        return \redirect()->route('home');
+    }
+
     /**
      * Display the specified resource.
      *
@@ -150,6 +156,5 @@ class UserController extends Controller
             session()->flash('user', $user->id);
             return \redirect()->back()->withErrors(['code' => 'کد نامعتبر است.']);
         }
-
     }
 }
