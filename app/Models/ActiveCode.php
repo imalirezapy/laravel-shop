@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Notifications\ActiveCodeNotification;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -27,7 +28,7 @@ class ActiveCode extends Model
 
     public function scopeGenerateCode($query, $user)
     {
-        $time = 40 + 20 * $user->activeCode()->count();
+        $time = 50 + 20 * $user->activeCode()->count();
 
         if ($code = $this->getAliveCodeForUser($user)) {
             $code = $code->code;
@@ -42,7 +43,9 @@ class ActiveCode extends Model
 //                'expired_at' => now()->addSeconds($time)
                 'expired_at' => now()->addSeconds($time)
             ]);
+
             // TODO Send Sms
+            $user->notify(new ActiveCodeNotification($code, $user->phone));
         }
 
         $time = Carbon::parse($this->getAliveCodeForUser($user)->expired_at);

@@ -2,23 +2,28 @@
 
 namespace App\Notifications;
 
+use App\Notifications\Channels\GhasedakChannel;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
+
 class ActiveCodeNotification extends Notification
 {
     use Queueable;
 
+    public $code;
+    public $phone;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($code, $phone)
     {
-        //
+        $this->code = $code;
+        $this->phone = $phone;
     }
 
     /**
@@ -29,20 +34,17 @@ class ActiveCodeNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['sms'];
+        return [GhasedakChannel::class];
     }
 
-
-    /**
-     * Get the array representation of the notification.
-     *
-     * @param  mixed  $notifiable
-     * @return array
-     */
-    public function toArray($notifiable)
+    public function toGhasedakSms($notifiable)
     {
         return [
-            //
+            'text' => "بازار\nکد: {$this->code} \nاین کد را در اختیار فردی دیگر قرار ندهید\n\ngithub: imalirezapy",
+            'phone' => "0".$this->phone
         ];
+
     }
+
+
 }

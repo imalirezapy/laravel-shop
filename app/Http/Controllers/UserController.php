@@ -118,9 +118,8 @@ class UserController extends Controller
 
         // Get user
         $user = User::wherePhone(session('phone'))->first();
-//        dd(! ActiveCode::getAliveCodeForUser($user));
-        // TODO Generate and Store code and Send sms
 
+        // TODO Generate code and Store, Send sms
         $time = ActiveCode::generateCode($user);
 
         session()->flash('user', $user->id);
@@ -149,7 +148,6 @@ class UserController extends Controller
             return \redirect('/');
         } else{
             session()->flash('user', $user->id);
-            session()->flash('phone', $user->phone);
             return \redirect()->back()->withErrors(['code' => 'کد نامعتبر است.']);
         }
 
