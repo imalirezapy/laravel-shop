@@ -3,27 +3,7 @@
 @section('title', 'ثبت نام')
 
 @section('content')
-    <style>
 
-        .dir-auto:-moz-placeholder {
-            text-align: right;
-        }
-        .dir-auto:-ms-input-placeholder {
-            text-align: right;
-        }
-        .dir-auto::-webkit-input-placeholder {
-            text-align: right;
-        }
-
-        .dir-auto{
-            direction: rtl;
-        }
-
-        .dir-auto:focus{
-            text-align: left;
-            direction: ltr;
-        }
-    </style>
     <div class="container-fluid">
         <div class="row h-100vh" >
             <div class="col-12 col-lg-6 col-md-10  vazir-rb">
@@ -59,12 +39,12 @@
                                     <strong class="text-danger">{{ $message }}</strong>
                                 @enderror
 
-                                <input value="{{old('phone')}}" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')" maxlength="14" placeholder="شماره تلفن همراه خود را وارد کنید"  class=" form-control auth-input dir-auto" name="phone" id="phone-input">
+                                <input minlength="4" value="{{old('phone')}}" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')" maxlength="14" placeholder="شماره تلفن همراه خود را وارد کنید"  class=" form-control auth-input dir-auto" name="phone" id="phone-input">
                                 @error('phone')
                                     <strong class="text-danger">{{ $message }}</strong>
                                 @enderror
 
-                                <button type="submit" class="btn  send-code-btn disabled"  id="send-code-btn">ارسال پیامک ورود</button>
+                                <button type="submit" class="btn  send-code-btn disabled" disabled  id="send-code-btn">ارسال پیامک ورود</button>
 
                             </form>
                             <label class="are-you-developer"><span>قبلا ثبت&zwnj;نام کردید؟</span></label>

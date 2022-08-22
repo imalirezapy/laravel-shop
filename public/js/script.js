@@ -2,21 +2,39 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+function apply(phone) {
+    var token = document.getElementById('_token').content;
+    $.ajax({
+        method: 'POST',
+        url: '/verify',
+        dataType: 'json',
+        data: {_token:token,},
+        success: function (response) {
+            timer(60, phone)
+        }, complete: function () {
+            // sleep(1400).then(() => {
+            //     item.className = item.className.replace('loader', '')
+            //     item.setAttribute('onclick', url+'(this)');
+            // });
+
+        }
+    });
+}
 
 let timerOn = true;
 
-function timer(remaining) {
+function timer(remaining, phone) {
     var m = Math.floor(remaining / 60);
-    var s = remaining-1 ;//% 60;
+    var s = remaining - 1;//% 60;
 
     m = m < 10 ? '0' + m : m;
     s = s < 10 ? '0' + s : s;
     document.getElementById('timer').innerHTML = s;
     remaining -= 1;
 
-    if(remaining >= 1 && timerOn) {
-        setTimeout(function() {
-            timer(remaining);
+    if (remaining >= 1 && timerOn) {
+        setTimeout(function () {
+            timer(remaining, phone);
         }, 1000);
         return;
     }
@@ -27,10 +45,8 @@ function timer(remaining) {
     // }
 
     location.reload();
-
 }
 
-timer(60);
 
 
 let phoneInput = document.getElementById('phone-input');
@@ -47,10 +63,15 @@ let nameInput = document.getElementById('name-input');
             enable = phoneInput.value.length >= 10;
         }
         if (enable) {
+
+            sendCodeButton.disabled = false;
             sendCodeButton.className = 'btn send-code-btn';
         } else {
+            sendCodeButton.disabled = true;
             sendCodeButton.className = "btn send-code-btn disabled";
         }
     });
 })
+
+
 

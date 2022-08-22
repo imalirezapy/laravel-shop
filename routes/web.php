@@ -18,15 +18,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
     Route::get('/register', [UserController::class, 'create'])->name('register');
-    Route::post('/register', [UserController::class, 'store'])->name('register');
+    Route::post('/register', [UserController::class, 'store']);
 
     Route::get('/login', [UserController::class, 'login'])->name('login');
-    Route::post('/login', [UserController::class, 'attempt'])->name('login');
+    Route::post('/login', [UserController::class, 'attempt']);
 
-    Route::get('/verify', [UserController::class, 'verify'])->name('verify');
-
+    Route::get('/verify', [UserController::class, 'getPhoneVerify'])->name('verify');
+    Route::post('/verify', [UserController::class, 'postPhoneVerify']);
 });
+
 Route::get('/', function () {
+    \auth()->logout();
+
     return view('welcome');
 })->name('home');
 
