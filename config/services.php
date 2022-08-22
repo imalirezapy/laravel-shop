@@ -30,5 +30,10 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'ghasedak'=>[
+        'key' => env('GHASEDAK_API_KEY'),
+        'line_number' => env('GHASEDAK_LINE_NUMBER')
+    ],
+
 
 ];
