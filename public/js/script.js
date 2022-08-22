@@ -23,7 +23,7 @@ function apply(phone) {
 
 let timerOn = true;
 
-function timer(remaining, phone) {
+function timer(remaining, redirect) {
     var m = Math.floor(remaining / 60);
     var s = remaining - 1;//% 60;
 
@@ -34,7 +34,7 @@ function timer(remaining, phone) {
 
     if (remaining >= 1 && timerOn) {
         setTimeout(function () {
-            timer(remaining, phone);
+            timer(remaining, redirect);
         }, 1000);
         return;
     }
@@ -44,7 +44,7 @@ function timer(remaining, phone) {
     //     return;
     // }
 
-    location.reload();
+    window.location.replace(redirect);
 }
 
 

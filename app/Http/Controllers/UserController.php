@@ -74,6 +74,12 @@ class UserController extends Controller
 
     }
 
+    public function logout()
+    {
+        \auth()->logout();
+        return \redirect()->route('home');
+    }
+
     /**
      * Display the specified resource.
      *
@@ -139,7 +145,7 @@ class UserController extends Controller
         $verified = ActiveCode::verifyCode($code, $user);
 
         if ($verified) {
-            Auth::login($user);
+            Auth::login($user, true);
             $user->activeCode()->delete();
             $user->update([
                 'phone_verified_at' => now(),
@@ -150,6 +156,5 @@ class UserController extends Controller
             session()->flash('user', $user->id);
             return \redirect()->back()->withErrors(['code' => 'کد نامعتبر است.']);
         }
-
     }
 }
