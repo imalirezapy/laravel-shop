@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ActiveCode;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
@@ -23,6 +28,9 @@ class UserController extends Controller
      */
     public function create()
     {
+        if (\auth()->check()) {
+            \auth()->logout();
+        }
         return view('auth.register');
     }
 
@@ -36,15 +44,15 @@ class UserController extends Controller
     {
         $validate_data = $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'phone' => ['required', 'digits_between:10,14', 'numeric', 'unique:users'],
+            'phone' => ['required', 'digits_between:10,14', 'numeric', 'unique:users', 'regex:/(\+98|0)?9\d{9}/i'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
         ]);
 
-        // generate code and save to database
-        // send code sms
+        User::create($validate_data);
 
         session()->flash('phone', $validate_data['phone']);
-        return view('auth.verify');
+
+        return Redirect::route('verify');
     }
 
     public function login()
@@ -55,10 +63,15 @@ class UserController extends Controller
     public function attempt(Request $request)
     {
         $validate_data = $request->validate([
-            'phone' => ['required', 'digits_between:10,14', 'numeric', 'in:users'],
+            'phone' => ['required', 'digits_between:10,14', 'numeric','regex:/(\+98|0)?9\d{9}/i',
+                Rule::in(User::all()->pluck('phone')->toArray())
+                ],
         ]);
+
         session()->flash('phone', $validate_data['phone']);
-        return view('auth.verify');
+
+        return Redirect::route('verify');
+
     }
 
     /**
@@ -95,12 +108,50 @@ class UserController extends Controller
         //
     }
 
-    public function verify()
+    public function getPhoneVerify()
     {
-        if (!session('phone')) {
+        if (!session()->has('phone')) {
             return redirect()->back();
         }
-        return view('auth.verify');
+
+        session()->flash('phone', session('phone'));
+
+        // Get user
+        $user = User::wherePhone(session('phone'))->first();
+//        dd(! ActiveCode::getAliveCodeForUser($user));
+        // TODO Generate and Store code and Send sms
+
+        $time = ActiveCode::generateCode($user);
+
+        session()->flash('user', $user->id);
+
+        return view('auth.verify', ['time' => $time]);
+    }
+
+    public function postPhoneVerify(Request $request)
+    {
+        $code = $request->validate([
+            'code' => ['required', 'numeric','min:100000']
+        ])['code'];
+
+
+        $user = User::find(session('user'));
+
+        $verified = ActiveCode::verifyCode($code, $user);
+
+        if ($verified) {
+            Auth::login($user);
+            $user->activeCode()->delete();
+            $user->update([
+                'phone_verified_at' => now(),
+
+            ]);
+            return \redirect('/');
+        } else{
+            session()->flash('user', $user->id);
+            session()->flash('phone', $user->phone);
+            return \redirect()->back()->withErrors(['code' => 'کد نامعتبر است.']);
+        }
 
     }
 }
