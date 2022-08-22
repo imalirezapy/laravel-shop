@@ -37,7 +37,7 @@
 
             <label class="are-you-developer"><span>قبلا ثبت&zwnj;نام کردید؟</span></label>
 
-            <a href="{{route('login')}}" class="btn btn-outline-primary login-link-button w-100" >ورود</a>
+            <a href="{{route('login')}}" class="btn button-48-gray login-link-button w-100" ><span>ورود</span></a>
         </div>
 @endsection
 

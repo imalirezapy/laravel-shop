@@ -28,7 +28,7 @@
 
             <label class="are-you-developer"><span>ثبت&zwnj;‌نام نکرده&zwnj;اید؟</span></label>
 
-            <a href="{{route('register')}}" class="btn btn-outline-dark register-link-botton" >ثبت&zwnj;نام</a>
+            <a href="{{route('register')}}" class="btn button-48-primary register-link-botton" ><span>ثبت&zwnj;نام</span></a>
         </div>
 
 

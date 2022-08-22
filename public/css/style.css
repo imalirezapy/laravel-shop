@@ -226,3 +226,102 @@ body{
     text-align: left;
     direction: ltr;
 }
+
+.button-48-gray {
+    appearance: none;
+    background-color: #FFFFFF;
+    display: inline-block;
+    position: relative;
+    text-rendering: geometricprecision;
+    transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1), background-color 100ms cubic-bezier(.694, 0, 0.335, 1), color 100ms cubic-bezier(.694, 0, 0.335, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    height: 38px;
+    color: #0d6efd;
+    border: 1px solid #0d6efd;
+}
+
+
+.button-48-gray:before {
+    border-radius: 0.25rem;
+    animation: opacityFallbackOut .5s step-end forwards;
+    backface-visibility: hidden;
+    background-color: #0d6efd;
+    clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+    content: "";
+    height: 38px;
+    left: -1px;
+    position: absolute;
+    top: -1px;
+    transform: translateZ(0);
+    transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+    width: 360px;
+}
+
+.button-48-gray:hover:before {
+    animation: opacityFallbackIn 0s step-start forwards;
+    clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.button-48-gray:after {
+    background-color: #0d6efd;
+}
+
+.button-48-gray span {
+    z-index: 1;
+    position: relative;
+}
+.button-48-gray:hover {
+    color: white;
+}
+.button-48-primary {
+    appearance: none;
+    background-color: #FFFFFF;
+    display: inline-block;
+    position: relative;
+    text-rendering: geometricprecision;
+    transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1), background-color 100ms cubic-bezier(.694, 0, 0.335, 1), color 100ms cubic-bezier(.694, 0, 0.335, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    height: 38px;
+}
+
+.button-48-primary:before {
+    border-radius: 0.25rem;
+    animation: opacityFallbackOut .5s step-end forwards;
+    backface-visibility: hidden;
+    background-color: #888282;
+    clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+    content: "";
+    height: 38px;
+    left: -1px;
+    position: absolute;
+    top: -1.5px;
+    transform: translateZ(0);
+    transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+    width: 360px;
+}
+
+.button-48-primary:hover:before {
+    animation: opacityFallbackIn 0s step-start forwards;
+    clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.button-48-primary:after {
+    background-color: #FFFFFF;
+}
+
+.button-48-primary span {
+    z-index: 1;
+    position: relative;
+}
+.button-48-primary:hover {
+    color: white;
+}
+.button-48-primary:focus {
+    box-shadow: 0 0 0 0.25rem rgba(105, 101, 101, 0.28);
+}
