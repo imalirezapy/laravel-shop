@@ -13,7 +13,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
         crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/storage/css/style.css" />
     <link rel="stylesheet" href="/fonts/fontawesome/css/all.css">
 
 
@@ -30,7 +30,7 @@
 </div>
 @yield('content')
 
-<script src="/js/jquery-3.6.0.min.js"></script>
+<script src="/storage/js/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function (){
         var loader = $("#loader");
@@ -48,7 +48,7 @@
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
     crossorigin="anonymous"
 ></script>
-<script src="/js/script.js"></script>
+<script src="/storage/js/script.js"></script>
 @yield('script')
 </body>
 </html>

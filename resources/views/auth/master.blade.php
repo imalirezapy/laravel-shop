@@ -20,7 +20,7 @@
             </div>
             <div class="d-none col-lg-6  d-lg-block bg-light-gray" >
                 <div class="center " >
-                    <img class="mt-10p" src="/defaults/login-pic.png" width="495" height="331">
+                    <img class="mt-10p" src="/storage/defaults/login-pic.png" width="495" height="331">
                 </div>
             </div>
         </div>
