@@ -117,7 +117,7 @@ class UserController extends Controller
     public function getPhoneVerify()
     {
         if (!session()->has('phone')) {
-            return redirect()->back();
+            return Redirect::route('login')->withErrors(['phone' => 'شماره وارد نشده']);
         }
 
         session()->flash('phone', session('phone'));
@@ -136,7 +136,7 @@ class UserController extends Controller
     public function postPhoneVerify(Request $request)
     {
         $code = $request->validate([
-            'code' => ['required', 'numeric','min:100000']
+            'code' => ['required', 'numeric','min:1000']
         ])['code'];
 
 
@@ -154,7 +154,8 @@ class UserController extends Controller
             return \redirect('/');
         } else{
             session()->flash('user', $user->id);
-            return \redirect()->back()->withErrors(['code' => 'کد نامعتبر است.']);
+            session()->flash('phone', session('phone'));
+            return Redirect::route('verify')->withErrors(['code' => 'کد نامعتبر است.']);
         }
     }
 }

@@ -112,58 +112,6 @@
 ></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-<script>
-    $(document).ready(function(){
 
-        $(".nav .dropdown").focusin( function (){
-            $(this).find(".dropdown-menu").each(function(){
-                $(this).css({"display":'block','opacity':'1','top':'60px'});
-            });
-        });
-
-        $(".nav .dropdown").focusout( function (){
-            $(this).find(".dropdown-menu").each(function(){
-                $(this).css({"display":'block','opacity':'0','top':'0px'});
-            });
-        });
-
-
-//   $(".navbar-brand").click( function (){
-//    alert("js working");
-//   });
-
-    });
-    let menu = document.getElementById('collapse-menu');
-    $('#collapse-menu').on('click', function (){
-        let event = document.getElementById('humber-bar');
-        if (event) {
-            menu.innerHTML = '<button data-arrow-focusable="" title="" id="x-bar" class="icon-button" style="width: 36px; height: 36px;"><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" class=""><path d="M18.78 5.22a.728.728 0 010 1.043L13.043 12l5.737 5.737a.728.728 0 010 1.043.728.728 0 01-1.043 0L12 13.043 6.263 18.78a.728.728 0 01-1.043 0 .728.728 0 010-1.043L10.957 12 5.22 6.263a.728.728 0 010-1.043.728.728 0 011.043 0L12 10.957l5.737-5.737a.728.728 0 011.043 0z" fill="#20222A"></path></svg></button>';
-        } else if (document.getElementById('x-bar')) {
-            menu.innerHTML = '<button data-arrow-focusable="" title="" id="humber-bar" class="icon-button" style="width: 36px; height: 36px;"><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" class=""><path d="M3.643 6.273h16.714A.631.631 0 0021 5.636.631.631 0 0020.357 5H3.643A.631.631 0 003 5.636c0 .358.281.637.643.637zm16.714 5.09H3.643A.631.631 0 003 12c0 .358.281.636.643.636h16.714A.631.631 0 0021 12a.631.631 0 00-.643-.636zm0 6.364H3.643a.631.631 0 00-.643.637c0 .358.281.636.643.636h16.714a.631.631 0 00.643-.636.631.631 0 00-.643-.637z" fill="#20222A"></path></svg></button>';
-        }
-
-    });
-    $(".owl-carousel").owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: false,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 2,
-                nav: true,
-            },
-            600: {
-                items: 5,
-                nav: false,
-            },
-            1000: {
-                items: 8,
-                nav: false,
-                loop: true,
-            },
-        },
-    });
-</script>
 
 <script src="/storage/js/script.js"></script>

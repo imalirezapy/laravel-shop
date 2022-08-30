@@ -1,5 +1,5 @@
-<div class="nav-lg">
-    <nav class="navbar  navbar-expand navbar-light  container-fluid vazir-rb " >
+<div class="nav-lg z-index-20" id="navbar-lg" >
+    <nav class="navbar  navbar-expand navbar-light  container-fluid vazir-rb "  >
 
         <div class="container-md">
             <a href="/">
@@ -38,7 +38,7 @@
                     </li>
                     <li class="nav-item dropend">
                         @guest
-                            <a class="nav-link mx-2 " href="{{route('login')}}" ><i class="fa-solid fa-user mt-2"></i></a>
+                            <a class="nav-link mx-2 " href="{{route('login')}}" ><i class="fa-solid fa-user "></i></a>
 
                         @else
                             <a class="nav-link mx-2 pt-0" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -63,7 +63,7 @@
 
                                         تراکنش&zwnj;های من
                                     </a></li>
-                                <li><a class="dropdown-item ListItem" href="?subscription">
+                                <li><a class="dropdown-item ListItem" href="{{route('logout')}}">
                                         <i class="fa fa-arrow-right-to-bracket" style="margin-left: 0.5rem;color: #6b6b6b"></i>
 
                                         خروج
@@ -84,10 +84,10 @@
             </div>
         </div>
 
-</nav>
+    </nav>
 </div>
 
-<div class="nav-sm ">
+<div class="nav-sm z-index-20" id="navbar-sm" style="z-index: 20">
     <nav class="navbar navbar-expand navbar-light  container-fluid vazir-rb ">
 
         <div class="w-100" id="navbarSupportedContent" >
