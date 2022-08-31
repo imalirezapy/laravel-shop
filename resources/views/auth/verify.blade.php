@@ -34,7 +34,7 @@
 <script>
     function verify(input) {
         let btn = document.getElementById('send-code-btn');
-        if (input.value.length>=6){
+        if (input.value.length>=4){
             btn.disabled = false;
             btn.className = 'btn send-code-btn mb-4';
         } else {
