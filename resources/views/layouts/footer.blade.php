@@ -1,93 +1,128 @@
 <!--    footer-->
 @if($dontshow)
-<div class="container my-3 py-2">
-    <p>
-        به خودتان نگاهی بیندازید، آیا برای انجام هر کاری به گوشی خود سر
-        نمی‌زنید؟ آیا به‌دنبال
-        <span class="fw-bold">دانلود برنامه‌های اندرویدی</span> نیستید که
-        کارهایتان را آسان‌تر کنند؟ ما در بازار
-        <span class="fw-bold">اپلیکیشن‌های اندروید</span> ، برای هر موضوعی که در
-        ذهن شماست، برنامه داریم و امکان نصب و دانلود آن‌ها را با اینترنت نیم‌بها
-        و با سپر امنیت بازار برایتان فراهم کرده‌ایم.
 
-        <br /><br />
 
-        اپلیکیشن‌های بازار در ۲۰ دسته‌ی مختلف منظم شده‌اند که در ادامه آن‌ها را
-        برایتان معرفی می‌کنیم. کافی است موضوع مورد علاقه‌ی خود را انتخاب کنید و
-        از بین صدها برنامه هر دسته، بهترین و کاربردی‌ترین اپ را دانلود کنید.
-        فراموش نکنید که حتما به نظرات و امتیازی (Rating) که کاربران به برنامه‌ها
-        داده‌اند نیز توجه کنید تا حافظه موبایل‌تان را با اپ‌های بهتری پر کنید.
-
-        <br /><br />
-        <span class="fw-bolder">دانلود برنامه‌های جدید اندرویدی </span>
-
-        <br />
-
-        در صفحه اصلی بازار می‌توانید برنامه‌های جدید منتخب سردبیران و همینطور
-        بروزرسانی‌های منتخب را ببینید و از هیچ برنامه جدیدی جا نمانید. بازی‌های
-        جدید نیز در صفحه بازی‌های اندرویدی بازار به‌همین ترتیب مشخص هستند.
-
-        <br>
-
-        <span class="fw-bolder">برنامه‌های شبکه‌های اجتماعی
-        </span>
-
-        <br>
-
-        امروز برای بسیاری از ما، گذران زندگی و کار بدون شبکه‌های اجتماعی امکان‌پذیر مثل واتساپ، اینستاگرام، تلگرام، توییتر، یوتیوب و ... نیست. هر برنامه‌ای که دوست دارید را انتخاب و ارتباط با جهان را آغاز کنید. جدیدترین بروزرسانی این اپ‌های بسیار پرطرفدار نیز به محض انتشار، در بازار قرار می‌گیرند و از طریق اطلاع‌رسانی‌ها (نوتیفیکیشن) شما را مطلع می‌کنند.
-    </p>
-
-    <br>
-
-    <span class="fw-bolder">ابزارهای اندرویدی
-      </span>
-
-    <br>
-
-    گوشی شما با برنامه‌های دسته‌ی ابزارهای بازار، آچار فرانسه‌ است. از ماشین حساب، زنگ، یادآور و تقویم گرفته تا ابزارهای افزایش سرعت گوشی، قفل برنامه‌ها، افزایش عمر باتری، ارزیابی سرعت و مصرف اینترنت، تبدیل واحدها، بارکد ساز و بارکدخوان، قطب‌نما، چراغ قوه، ساخت نسخه‌ی پشتیبان، دفتر یادداشت، آنتی ویروس‌ها، حافظه‌ی ابری و بسیاری برنامه‌ی پرکاربرد دیگر.
-
-    <br>
-
-    <span class="fw-bolder">اپلیکیشن‌های عکاسی و ویدیو و فیلم‌برداری
-      </span>
-
-    <br>
-    اگر دنبال برنامه‌هایی هستید که از گوشی خود بهتر و بیشتر استفاده کنید، به دسته‌های شخصی‌سازی و عکاسی و ویدیو سر بزنید. اپلیکیشن‌های تصاویر پس زمینه، قفل‌ها و برترین‌ برنامه‌های تغییر فضای گوشی را از دسته‌ی شخصی‌سازی نصب کنید. برنامه‌های ویرایش و ساخت عکس، ساخت ویدیو و چاپ عکس را نیز از دسته‌ي عکاسی و ویدیو دانلود کنید و دنیای فیلترها و ابزارهای تدوین را تجربه کنید.
-
-    <br>
-    <br>
-
-    از ابزارهای شخصی‌سازی نیز غافل نشوید و گوشی خود را با آن‌ها، به سبک خود تغییر دهید. مثلا زنگ گوشی، پس زمینه و صفحه کلید شخصی خود را دانلود کنید و با قفل فایل‌ها و برنامه‌ها کنترل موبایل خود را به دست بگیرید.
-</div>
-<div class="footer">
-    <div class="container my-3 py-2">
-        <div class="row">
-            <div class="col-lg-8">
-                <p>بازار، نخستین و پرمخاطب‌ترین فروشگاه ایرانی برنامه‌ها و بازی‌های موبایلی دنیای اندروید</p>
-                <p class="text-muted">صد‌ها هزار بازی ایرانی و خارجی دیتادار یا بدون دیتا را با ترافیک نیم‌بها نصب کنید و به سادگی خرید درون‌ برنامه‌ای انجام دهید. بازار مجهز به سپر امنیت است که برنامه‌ها را توسط آنتی ویروس‌ها بررسی کرده و به محض شناسایی برنامه‌ی مخرب، به کاربر اعلام می‌کند که آن برنامه را از دستگاه خود پاک کند.</p>
-            </div>
-            <div class="col-lg-4 d-none d-md-flex">
-                <div class="row  border py-3">
-                    <div class="col-xl-3 d-md-inline">
-                        <div>
-                            <img src="images/1234567.png" alt="">
-                        </div>
+    <div class="footer-div">
+        <footer class="container-fluid footer-1   bg-white" >
+            <div class="d-flex justify-content-between">
+                <div class=" footer-item mr-auto pl-10 footer-text" style="width: 90%">
+                    <h6>
+                        بازار، نخستین و پرمخاطب‌ترین فروشگاه ایرانی برنامه‌ها و بازی‌های
+                        موبایلی دنیای اندروید
+                    </h6>
+                    <p>
+                        صد‌ها هزار بازی ایرانی و خارجی دیتادار یا بدون دیتا را با ترافیک
+                        نیم‌بها نصب کنید و به سادگی خرید درون‌ برنامه‌ای انجام دهید. بازار
+                        مجهز به سپر امنیت است که برنامه‌ها را توسط آنتی ویروس‌ها بررسی کرده و
+                        به محض شناسایی برنامه‌ی مخرب، به کاربر اعلام می‌کند که آن برنامه را از
+                        دستگاه خود پاک کند.
+                    </p>
+                </div>
+                <div class="footer-item ml-auto" style=" width: 420px; border: 1px solid #e5e7f0;border-radius: 8px;">
+                <div class="d-flex">
+                    <div class="ml-3">
+                        <img
+                            src="/storage/defaults/footer-download.png"
+                            alt=""
+                            style="width: 100px; height: 100px"
+                        />
                     </div>
-                    <div class="col-xl-9 d-md-inline">
-                        <div>
-                            <h5>دانلود اپلیکیشن بازار</h5>
-                            <small>پرمخاطب‌ترین اپ‌استور (اندروید) فارسی‌زبانان</small>
-                        </div>
-                        <div class="d-flex justify-content-around py-2 mx-2">
-                            <a class="btn border text-success">نسخه اندروید</a>
-                            <a class="btn border text-success">نسخه اندروید</a>
+                    <div class="">
+                        <p class="h6">دانلود اپلیکیشن بازار</p>
+                        <p class="fs-12 flex-nowrap">
+                            <small class="text-muted"
+                            >پرمخاطب‌ترین اپ‌استور (اندروید) فارسی‌زبانان</small
+                            >
+                        </p>
+                        <div class="d-flex download-buttons">
+                            <a class="btn text-success bg-white" style="margin-left: 0.6rem"
+                            >نسخه اندروید</a
+                            >
+                            <a class="btn text-success bg-white">نسخه اندروید TV</a>
                         </div>
                     </div>
                 </div>
             </div>
+            </div>
+
+        </footer>
+        <div class="line"></div>
+        <footer class="container-fluid footer-2  bg-white" >
+            <div class="d-flex justify-content-between footer-links fs-14">
+
+
+                    <div>
+                        <a title="نصب بازار" href="/pre-install" class="footer__link">نصب بازار
+                        </a>
+                        <a href="/pages/home-game" class="footer__link" title="بازی اندروید">بازی اندروید
+                        </a>
+                        <a href="/app" class="footer__link" title="برنامه اندروید">برنامه اندروید
+                        </a>
+                    </div>
+                    <div>
+                        <a title="توسعه‌دهندگان بازار" href="https://developers.cafebazaar.ir/fa" target="_blank" class="footer__link">توسعه‌دهندگان بازار
+                        </a>
+                        <a title="فرصت‌های شغلی" href="https://careers.cafebazaar.ir" target="_blank" class="footer__link">فرصت‌های شغلی
+                        </a>
+                        <a href="/badge" class="footer__link" title="نشان دریافت از بازار">نشان دریافت از بازار
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/terms" class="footer__link" title="شرایط استفاده">شرایط استفاده
+                        </a>
+                        <a href="/privacy" class="footer__link" title="حریم خصوصی">حریم خصوصی
+                        </a>
+                        <a title="پشتیبانی" href="https://help.cafebazaar.ir" target="_blank" class="footer__link">پشتیبانی
+                        </a>
+                    </div>
+                    <div>
+                        <a title="بلاگ بازار" href="https://mag.cafebazaar.ir" target="_blank" class="footer__link">بلاگ بازار
+                        </a>
+                        <a title="خبرها و بیانیه‌های بازار" href="https://newsblog.cafebazaar.ir" target="_blank" class="footer__link">خبرها و بیانیه‌های بازار
+                        </a>
+                        <a title="بلاگ فنی بازار" href="https://tech.cafebazaar.ir" target="_blank" class="footer__link">بلاگ فنی بازار
+                        </a>
+                    </div>
+                    <div>
+                        <a title="تبلیغات در بازار" href="https://ads.cafebazaar.ir" target="_blank" class="footer__link">تبلیغات در بازار
+                        </a>
+                        <a href="/about" class="footer__link" title="درباره ما">درباره ما
+                        </a>
+                        <a href="/contact" class="footer__link" title="تماس با ما">تماس با ما
+                        </a>
+                    </div>
+
+
+
+                <div class="footer-item ml-auto" style=" ;height: 110px">
+                    <div class="d-flex footer-logos">
+                        <div class="footer-logo" style="border: 1px solid #e5e7f0;border-radius: 8px;">
+                            <img src="/storage/defaults/logo.png" height="110" width="101">
+
+                        </div>
+                        <div class="samandehi-logo" style="border: 1px solid #e5e7f0;border-radius: 8px;">
+                            <img src="/storage/defaults/samandehi.png" height="110" width="101">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+
+    </div>
+    <div class="copyright-div">
+        <div class="line"></div>
+        <div class="container-fluid footer-copyright">
+            <div class="fs-12">
+                تمامی حقوق این سایت متعلق به شرکت آوای همراه هوشمند هزاردستان (فروشگاه برنامه‌های موبایلی اندروید بازار) است.
+            </div>
+            <div class="d-flex">
+                <i class="fa-brands fa-linkedin-in"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+            </div>
         </div>
     </div>
-</div>
 @endif
 <script src="/storage/js/jquery-3.6.0.min.js"></script>
 
@@ -115,3 +150,4 @@
 
 
 <script src="/storage/js/script.js"></script>
+
