@@ -34,13 +34,12 @@ class ActiveCode extends Model
             $code = $code->code;
         } else {
             do {
-                $code = mt_rand(100000, 999999);
+                $code = mt_rand(1000, 9999);
             } while ($this->checkCodeIsUnique($user, $code));
 
             // store the code
             $user->activeCode()->create([
                 'code' => $code,
-//                'expired_at' => now()->addSeconds($time)
                 'expired_at' => now()->addSeconds($time)
             ]);
 

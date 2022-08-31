@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AppController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -29,10 +30,20 @@ Route::group(['guest'],function () {
 });
 
 Route::group(['auth'], function () {
-    Route::middleware('auth')->group(function () {
-        Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+
+    Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+
+    Route::prefix('admin')->group(function () {
+        Route::get('/categories', function () {
+            return view('admin.categories');
+        });
+        Route::get('/', fn()=> view('admin.index'));
     });
+
 });
+
+
+Route::get('/app/{app:slug}', [AppController::class, 'show'])->name('app.show');
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');

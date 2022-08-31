@@ -14,11 +14,12 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
     />
+    @section('heade')
 </head>
 @php
     $dontshow = ! in_array(request()->route()->getName(), ['login', 'register', 'verify'])
 @endphp
-<body  style="background-color: @if($dontshow)  #f9fafd @else #fff   @endif;">
+<body class="@if($dontshow)  body-bg @endif">
     <div id="loader">
         <div class="lds-ellipsis">
             <div></div>
@@ -27,11 +28,16 @@
             <div></div>
         </div>
     </div>
+
     @if($dontshow)
         @include('layouts.header')
     @endif
+
     @yield('content')
-        @include('layouts.footer')
+
+    @include('layouts.footer')
+
     @yield('script')
+
 </body>
 </html>
