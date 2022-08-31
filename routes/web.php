@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AppController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -16,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 //Auth::routes(['except' => ['register', 'login']]);
 
-Route::middleware('guest')->group(function () {
+Route::group(['guest'],function () {
     Route::get('/register', [UserController::class, 'create'])->name('register');
     Route::post('/register', [UserController::class, 'store']);
 
@@ -27,16 +29,21 @@ Route::middleware('guest')->group(function () {
     Route::post('/verify', [UserController::class, 'postPhoneVerify']);
 });
 
-Route::middleware('auth')->group(function () {
+Route::group(['auth'], function () {
+
     Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+
+    Route::prefix('admin')->group(function () {
+        Route::get('/categories', function () {
+            return view('admin.categories');
+        });
+        Route::get('/', fn()=> view('admin.index'));
+    });
+
 });
 
-Route::get('/', function () {
-    if (\auth()->check()) {
-        echo "<h1><a href='/logout'>خروج</a></h1>";
-    }
-    return view('welcome');
-})->name('home');
+
+Route::get('/app/{app:slug}', [AppController::class, 'show'])->name('app.show');
 
 
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');

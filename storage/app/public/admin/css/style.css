@@ -1,0 +1,48 @@
+
+body{
+    direction: rtl;
+    text-align: right;
+    font-family: 'Vazir', sans-serif;
+    font-size: .9rem;
+}
+
+#sidebar{
+    height: 100%;
+}
+
+@media (min-width: 768px){
+    #sidebar{
+        height: calc(100vh - 62px) !important ;
+        position: fixed;
+        transition: transform .5s linear;
+    }
+    /* #sidebar.collapse{
+        transform: translate(100%,0);
+    } */
+    #sidebar.collapse.show{
+        transform: translate(0,0);
+    }
+    #sidebar.collapsing{
+        transform: translate(100%,0);
+    }
+}
+
+#sidebar.collapsing{
+    height: 0;
+}
+
+#sidebar .nav-link{
+    color: #fff;
+}
+
+#sidebar .oi{
+    transition: .3s transform ease-in-out;
+}
+
+#sidebar .oi-chevron-left{
+    transform: rotate(-90deg);
+}
+
+#sidebar .collapsed .oi-chevron-left{
+    transform: rotate(0deg);
+}
