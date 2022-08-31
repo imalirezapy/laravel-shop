@@ -1,3 +1,19 @@
+
+let collapseIcon = $(".collapse-icon");
+collapseIcon.on("click", function () {
+    let textAria = $(".text-aria");
+
+    if ($(".text-aria-icon").hasClass("fa-angle-down")) {
+        textAria.css("max-height", "100%");
+        collapseIcon.css("background", "none");
+        $(".fa-angle-down").removeClass("fa-angle-down").addClass("fa-angle-up");
+    } else if ($(".text-aria-icon").hasClass("fa-angle-up")) {
+        textAria.css("max-height", "300px");
+        collapseIcon.css("background", "linear-gradient(180deg,rgba(249, 250, 253, 0) 70%,hsla(0, 0%, 100%, 0.7) 90%,#fff 99%)");
+        $(".fa-angle-up").removeClass("fa-angle-up").addClass("fa-angle-down");
+    }
+});
+
 // ========== sleep function ==================================
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));

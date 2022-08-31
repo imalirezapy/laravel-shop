@@ -19,7 +19,7 @@
 @php
     $dontshow = ! in_array(request()->route()->getName(), ['login', 'register', 'verify'])
 @endphp
-<body class="@if($dontshow)  body-bg @endif">
+<body class="@if($dontshow)  body-bg @endif vazir-rb">
     <div id="loader">
         <div class="lds-ellipsis">
             <div></div>
