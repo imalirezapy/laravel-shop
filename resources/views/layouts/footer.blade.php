@@ -2,7 +2,7 @@
 @if($dontshow)
 
 
-    <div class="footer-div">
+    <div class="footer-div footer-lg">
         <footer class="container-fluid footer-1   bg-white" >
             <div class="d-flex justify-content-between">
                 <div class=" footer-item mr-auto pl-10 footer-text" style="width: 90%">
@@ -18,7 +18,7 @@
                         دستگاه خود پاک کند.
                     </p>
                 </div>
-                <div class="footer-item ml-auto" style=" width: 420px; border: 1px solid #e5e7f0;border-radius: 8px;">
+                <div class="footer-item ml-auto" style=" width: 420px; border: 1px solid #e5e7f0;border-radius: 8px;padding-left: 47px;">
                 <div class="d-flex">
                     <div class="ml-3">
                         <img
@@ -94,7 +94,7 @@
 
 
 
-                <div class="footer-item ml-auto" style=" ;height: 110px">
+                <div class="footer-item " style=" ;height: 110px">
                     <div class="d-flex footer-logos">
                         <div class="footer-logo" style="border: 1px solid #e5e7f0;border-radius: 8px;">
                             <img src="/storage/defaults/logo.png" height="110" width="101">
@@ -111,18 +111,40 @@
 
     </div>
     <div class="copyright-div">
-        <div class="line"></div>
-        <div class="container-fluid footer-copyright">
-            <div class="fs-12">
-                تمامی حقوق این سایت متعلق به شرکت آوای همراه هوشمند هزاردستان (فروشگاه برنامه‌های موبایلی اندروید بازار) است.
-            </div>
-            <div class="d-flex">
-                <i class="fa-brands fa-linkedin-in"></i>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-twitter"></i>
+            <div class="line"></div>
+            <div class="container-fluid footer-copyright">
+                <div class="fs-12">
+                    تمامی حقوق این سایت متعلق به شرکت آوای همراه هوشمند هزاردستان (فروشگاه برنامه‌های موبایلی اندروید بازار) است.
+                </div>
+                <div class="d-flex">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
             </div>
         </div>
+    <div class="footer-div-sm sticky-footer z-index-20  justify-content-between " id="footer-sm" >
+        <div class="me-md-5 me-sm-3">
+            <a class="decoration-none " href="#">
+                <i class="fa-light fa-gamepad-modern"></i>
+                <p>بازی</p>
+            </a>
+        </div>
+        <div>
+            <a class="decoration-none " href="{{route('home')}}">
+                <i class="fa-solid fa-grid-2"></i>
+                <p>برنامه</p>
+            </a>
+        </div>
+        <div class="ms-md-5 ms-sm-3">
+            <a class="decoration-none " href="#">
+                <i class="fa-light fa-download"></i>
+                <p>نصب بازار</p>
+            </a>
+        </div>
+
     </div>
+    <div class="footer-div-sm"></div>
 @endif
 <script src="/storage/js/jquery-3.6.0.min.js"></script>
 

@@ -94,20 +94,22 @@ if (['register', 'login', 'verify'].includes(document.getElementById('route').co
 }
 
 // ========== fix header top ===================================
-window.onscroll = function() {myFunction()};
-var header_lg = document.getElementById("navbar-lg");
-var header_sm = document.getElementById("navbar-sm");
-var sticky1 = header_lg.offsetTop;
-var sticky2 = header_sm.offsetTop;
-function myFunction() {
-    if (window.pageYOffset > sticky1 || window.pageYOffset > sticky2) {
-        header_lg.classList.add("sticky");
-        header_sm.classList.add("sticky");
-    } else {
-        header_lg.classList.remove("sticky");
-        header_sm.classList.remove("sticky");
-    }
-}
+// window.onscroll = function() {myFunction()};
+// var header_lg = document.getElementById("navbar-lg");
+// var header_sm = document.getElementById("navbar-sm");
+// var sticky1 = header_lg.offsetTop;
+// var sticky2 = header_sm.offsetTop;
+//
+// function myFunction() {
+//     if (window.pageYOffset > sticky1 || window.pageYOffset > sticky2 ) {
+//         header_lg.classList.add("sticky");
+//         header_sm.classList.add("sticky");
+//
+//     } else {
+//         header_lg.classList.remove("sticky");
+//         header_sm.classList.remove("sticky");
+//     }
+// }
 
 // ========== burger menu ======================================
 let menu = document.getElementById('collapse-menu');
@@ -122,29 +124,56 @@ $('#collapse-menu').on('click', function (){
 });
 
 // ========== horizon scroll ===================================
-$('.owl-carousel').owlCarousel({
-    rtl: true,
-    margin: 10,
-    dots: false,
-    responsive: {
-        0: {
-            items: 4,
+var fixOwl = function(){
+    var $stage = $('.owl-stage'),
+        stageW = $stage.width(),
+        $el = $('.owl-item'),
+        elW = 0;
+    $el.each(function() {
+        elW += $(this).width()+ +($(this).css("margin-right").slice(0, -2))
+    });
+    if ( elW > stageW ) {
+        $stage.width( elW );
+    };
+}
+if (document.getElementById('route').content === "app.show") {
+    $('.owl-carousel').owlCarousel({
+        rtl: true,
+        margin: 1,
+        dots: false,
+        autoWidth: true,
+        onInitialized: fixOwl,
+        onRefreshed: fixOwl
+    });
+} else {
+    $('.owl-carousel').owlCarousel({
+        rtl: true,
+        margin: 1,
+        dots: false,
+        responsive: {
+            0: {
+                items: 4,
+            },
+            640: {
+                items: 6,
+            },
+            1024: {
+                items: 7,
+            },
+            1200: {
+                items: 8,
+            },
+            1440: {
+                items: 10,
+            },
         },
-        640: {
-            items: 6,
-        },
-        1024: {
-            items: 7,
-        },
-        1200: {
-            items: 8,
-        },
-        1440: {
-            items: 10,
-        },
-    },
 
-});
+    });
+}
+
+
+
+
 
 function moved() {
     var owl = $(".owl-carousel").data('owlCarousel');
